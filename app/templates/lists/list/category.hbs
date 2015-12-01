@@ -1,0 +1,36 @@
+<div class="col-sm-5 col-xs-12">
+  <div class="panel panel-info">
+    <div class="panel-heading">
+      <h3 class="center-align-space-between align-center">
+        {{model.name}}
+        <button type="button" class="btn btn-sm btn-default" {{action "toggleCompletedHidden"}}>
+          Toggle Show Completed
+        </button>
+      </h3>
+    </div>
+    <div class="panel-body">
+      <form {{action "createTodo" on="submit"}} class="center-align">
+        {{input class="form-control" value=name placeholder="New todo..."}}
+        <button class="btn btn-success"><i class="fa fa-plus-circle"></i></button>
+      </form>
+
+      {{#each model.todos as |todo|}}
+        {{#if todo.show}}
+          <h4 class="center-align-space-between">
+            <span>
+              {{#if todo.completed}}
+                <i class="fa fa-check-square" {{action "toggleTodo" todo}}></i>
+              {{else}}
+                <i class="fa fa-square-o" {{action "toggleTodo" todo}}></i>
+              {{/if}}
+              <span {{bind-attr class="todo.completed"}}>
+                {{todo.name}}
+              </span>
+            </span>
+            <i class="fa fa-minus-circle red" {{action "deleteTodo" todo}}></i>
+          </h4>
+        {{/if}}
+      {{/each}}
+    </div>
+  </div>
+</div>

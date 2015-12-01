@@ -1,0 +1,37 @@
+<div class="panel panel-primary">
+  <div class="panel-heading">
+    <h2 class="center-align-space-between">
+      <span>
+        <i class="fa fa-clone" {{action "cloneList" model}}></i>
+        <i class="fa fa-minus-circle red" {{action "deleteList" model}}></i>
+        {{model.name}}
+      </span>
+      {{outlet 'new-category'}}
+      {{#link-to 'lists.list.new-category'}}<i class="fa fa-plus-circle"></i>Add Category{{/link-to}}
+    </h2>
+  </div>
+  {{#if model.categories}}
+    <div class="panel-body">
+      <div class="center-align-space-around">
+        <div class="col-sm-5 col-xs-12">
+          <div class="panel panel-info">
+            <div class="panel-heading">
+              <h3>Categories</h3>
+            </div>
+            <div class="panel-body">
+              {{#each model.categories as |category|}}
+                <div>
+                  <h3>
+                    <i class="fa fa-minus-circle red" {{action "deleteCategory" category}}></i>
+                    {{#link-to 'lists.list.category' category.id}}{{category.name}}{{/link-to}}
+                  </h3>
+                </div>
+              {{/each}}
+            </div>
+          </div>
+        </div>
+        {{outlet 'category'}}
+      </div>
+    </div>
+  {{/if}}
+</div>

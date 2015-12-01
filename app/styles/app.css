@@ -1,0 +1,49 @@
+.flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+.flex-wrap {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.align-top {
+  display: flex;
+  align-items: flex-start;
+}
+
+.align-center {
+  display: flex;
+  align-items: center;
+}
+
+.center-align-space-around {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.center-align-space-between {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.center-align {
+  display: flex;
+  justify-content: center;
+}
+
+.red {
+  color: red;
+}
+
+.completed {
+  color: gray;
+  text-decoration: line-through;
+}
+
+.center-align.flex-wrap .btn {
+  margin: 5px;
+}
