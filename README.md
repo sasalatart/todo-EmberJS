@@ -2,6 +2,10 @@
 
 > Patricio López ([@mrpatiwi](https://github.com/mrpatiwi)) y Sebastián Salata ([@sasalatart](https://github.com/sasalatart))
 
+## Demo
+
+http://sasalatart.github.io/todo-EmberJS/
+
 ## Prerequisites
 
 You will need the following things properly installed on your computer.
